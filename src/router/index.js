@@ -76,6 +76,52 @@ export const constantRoutes = [
       }
     ]
   },
+  //数据字典列表
+  {
+    path: '/dict',
+    component: Layout,
+    redirect: '/dict/list',
+    name: 'dict',
+    alwaysShow: true,
+    meta: { title: '数据字典管理管理', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'list',
+        name: 'Table',
+        component: () => import('@/views/dict/list'),
+        meta: { title: '数据字典列表', icon: 'table' }
+      }
+    ]
+  },
+  //医院设置管理
+  {
+    path: '/hospset',
+    component: Layout,
+    redirect: '/hospset/list',
+    name: 'hospset',
+    meta: { title: '医院设置管理', icon: 'el-icon-s-help' },
+    children: [
+      {
+        path: 'list',
+        name: 'Table',
+        component: () => import('@/views/hospset/list'),
+        meta: { title: '医院设置列表', icon: 'table' }
+      },
+      {
+        path: 'save',
+        name: 'Tree',
+        component: () => import('@/views/hospset/save'),
+        meta: { title: '医院设置添加', icon: 'tree' }
+      },
+      {
+        path: 'edit/:id',
+        name: 'HospSetEdit',
+        component: () => import('@/views/hospset/save'),
+        meta: { title: '编辑医院设置', noCache: true },
+        hidden: true
+      },
+    ]
+  },
 
   {
     path: '/form',
@@ -177,5 +223,6 @@ export function resetRouter() {
   const newRouter = createRouter()
   router.matcher = newRouter.matcher // reset router
 }
+
 
 export default router
