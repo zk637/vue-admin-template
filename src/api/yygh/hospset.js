@@ -1,6 +1,6 @@
 import request from '@/utils/request'
 
-const api_name ='/admin/hosp'
+const api_name ='/admin/hosp/'
 export default {
     getPageList(current,limit,serarchObj){
         return request({

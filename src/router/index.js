@@ -120,6 +120,20 @@ export const constantRoutes = [
         meta: { title: '编辑医院设置', noCache: true },
         hidden: true
       },
+      {
+        path: 'hospital/list',
+        name: '医院列表',
+              component: () =>import('@/views/hosp/list'),
+        meta: { title: '医院列表', icon: 'table' }
+      },
+      {
+        path: 'hospital/show/:id',
+        name: '查看',
+        component: () => import('@/views/hosp/show'),
+        meta: { title: '查看', noCache: true },
+        hidden: true
+      }
+      
     ]
   },
 

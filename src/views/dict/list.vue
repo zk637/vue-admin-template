@@ -68,25 +68,25 @@ export default {
     return {
       dialogImportVisible :false,
       list: []
-    };
+    }
   },
   created() {
-    this.getDictList(1);
+    this.getDictList(1)
   },
   methods: {
     getDictList(id) {
-      debugger;
+      // debugger;
       dict.getList(id).then(response => {
-        this.list = response.data.dictList;
-      });
+        this.list = response.data.dictList
+      })
     },
     load(tree, treeNode, resolve) {
       dict.getList(tree.id).then(response => {
         resolve(response.data.dictList);
-      });
+      })
     },
     importData(){
-        debugger
+        // debugger
         this.dialogImportVisible=true
     },
     exportData(){
